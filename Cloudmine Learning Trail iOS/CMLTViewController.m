@@ -17,6 +17,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[self navigationController] setNavigationBarHidden:YES animated:YES];
+
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -24,6 +26,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == _PasswordTextField) {
+        [textField resignFirstResponder];
+    } else if (textField == _EmailTextField) {
+        [self.PasswordTextField becomeFirstResponder];
+    }
+    return YES;
 }
 
 @end

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CMLTViewController : UIViewController
+@interface CMLTViewController : UIViewController <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *EmailTextField;
+@property (weak, nonatomic) IBOutlet UITextField *PasswordTextField;
 
 @end

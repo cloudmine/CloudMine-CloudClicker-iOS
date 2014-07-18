@@ -7,12 +7,16 @@
 //
 
 #import "CMLTAppDelegate.h"
+#import <CloudMine/CloudMine.h>
 
 @implementation CMLTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    CMAPICredentials *credentials = [CMAPICredentials sharedInstance];
+    credentials.appIdentifier = @"33a972520cb447bda768b5d93ceb266f";
+    credentials.appSecret = @"E52F3E3F8E234F3EBB886FD2986A7A85";
     return YES;
 }
 							
