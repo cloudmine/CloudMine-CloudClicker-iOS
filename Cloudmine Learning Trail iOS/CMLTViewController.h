@@ -11,5 +11,6 @@
 @interface CMLTViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *EmailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *PasswordTextField;
+- (IBAction)login:(id)sender;
 
 @end

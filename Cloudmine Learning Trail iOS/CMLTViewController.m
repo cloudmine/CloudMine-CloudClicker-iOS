@@ -7,7 +7,7 @@
 //
 
 #import "CMLTViewController.h"
-
+#import <CloudMine/CloudMine.h>
 @interface CMLTViewController ()
 
 @end
@@ -37,4 +37,27 @@
     return YES;
 }
 
+- (IBAction)login:(id)sender {
+    CMUser *user = [[CMUser alloc] initWithEmail:[_EmailTextField text] andPassword:[_PasswordTextField text]];
+    UIAlertView * passwordAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Invalid Credentials" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+    UIAlertView * existenceAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"An account with those credentials does not exist" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+
+    // You can use "anotherUser" here in the same way!
+    [user loginWithCallback:^(CMUserAccountResult resultCode, NSArray *messages) {
+        switch(resultCode) {
+            case CMUserAccountLoginSucceeded:
+                // success! the user now has a session token
+                [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+                break;
+            case CMUserAccountLoginFailedIncorrectCredentials:
+                // the users credentials were invalid
+                [passwordAlert show];
+                break;
+            case CMUserAccountOperationFailedUnknownAccount:
+                [existenceAlert show];
+                // this account doesn't exist
+                break;
+        }
+    }];
+}
 @end
