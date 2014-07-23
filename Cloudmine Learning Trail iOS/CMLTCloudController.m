@@ -24,9 +24,31 @@
     return self;
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    self.navigationItem.hidesBackButton = YES;
+    self.navigationController.navigationBar.hidden = YES;
+
+
+}
+
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    [self.navigationItem setHidesBackButton:NO animated:YES];
+    self.navigationController.navigationBar.hidden = NO;
+
+
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBar.topItem.hidesBackButton = NO;
+
     // Do any additional setup after loading the view.
     _cloudScore = [[CMScore alloc] init];
     _cloudScore.blueCloudScore = 0;

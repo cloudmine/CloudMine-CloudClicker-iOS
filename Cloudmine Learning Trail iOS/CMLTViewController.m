@@ -14,11 +14,19 @@
 
 @implementation CMLTViewController
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.hidden = YES;
+}
+
+-(void) viewWillDisappear:(BOOL)animated
+{
+    self.navigationController.navigationBar.hidden = NO;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[self navigationController] setNavigationBarHidden:YES animated:YES];
-
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -60,4 +68,29 @@
         }
     }];
 }
+
+- (IBAction)facebookLogin:(id)sender {
+    CMUser *user = [[CMUser alloc] init];
+    
+    [user loginWithSocialNetwork:CMSocialNetworkFacebook viewController:self params:nil callback:^(CMUserAccountResult resultCode, NSArray *messages) {
+        NSLog(@"resultCode: %d", resultCode);
+
+        if (resultCode == CMUserAccountLoginSucceeded) {
+            //Logged in!
+            NSString *token = user.token;
+            [self dismissViewControllerAnimated:YES completion:nil];
+            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+        } else {
+            //Look up and deal with error
+            NSLog(@"Message? %@", messages);
+        }
+        
+    }];
+    
+}
+
+- (IBAction)googleLogin:(id)sender {
+}
+
+
 @end

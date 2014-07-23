@@ -30,15 +30,20 @@
     CMStore *store = [CMStore defaultStore];
 
     NSArray *keys = [NSArray arrayWithObject:_objectId];
+    if (keys !=nil) {
+        
     
     [store objectsWithKeys:keys
          additionalOptions:nil
                   callback:^(CMObjectFetchResponse *response) {
                       NSLog(@"Objects: %@", response.objects);
-                      CMScore *score = [response.objects objectAtIndex:0];
-                      [self updateScoresWithRedScore:score.redCloudScore blueScore:score.blueCloudScore andTotalScore:score.totalCloudScore];
+                      if (response.objects.count > 0) {
+                          CMScore *score = [response.objects objectAtIndex:0];
+                          [self updateScoresWithRedScore:score.redCloudScore blueScore:score.blueCloudScore andTotalScore:score.totalCloudScore];
+                      }
                   }
      ];
+    }
     // Do any additional setup after loading the view.
 }
 
