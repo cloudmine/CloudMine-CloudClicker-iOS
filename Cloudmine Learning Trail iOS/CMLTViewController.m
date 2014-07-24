@@ -7,7 +7,7 @@
 //
 
 #import "CMLTViewController.h"
-#import <CloudMine/CloudMine.h>
+#import "CloudMine.h"
 @interface CMLTViewController ()
 
 @end
@@ -55,6 +55,16 @@
         switch(resultCode) {
             case CMUserAccountLoginSucceeded:
                 // success! the user now has a session token
+                [CMStore defaultStore].user = user;
+                [[CMStore defaultStore] registerForPushNotifications:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)
+                                                            callback:^(CMDeviceTokenResult result) {
+                                                                if (result == CMDeviceTokenUploadSuccess || result == CMDeviceTokenUpdated) {
+                                                                    NSLog(@"Registered successfully!");
+                                                                } else {
+                                                                    NSLog(@"Uh oh, something happened: %d", result);
+                                                                }
+                                                            }];
+                
                 [self performSegueWithIdentifier:@"loginSegue" sender:nil];
                 break;
             case CMUserAccountLoginFailedIncorrectCredentials:
@@ -77,12 +87,13 @@
 
         if (resultCode == CMUserAccountLoginSucceeded) {
             //Logged in!
-            NSString *token = user.token;
             [self dismissViewControllerAnimated:YES completion:nil];
             [self performSegueWithIdentifier:@"loginSegue" sender:nil];
         } else {
             //Look up and deal with error
             NSLog(@"Message? %@", messages);
+            [self dismissViewControllerAnimated:YES completion:nil];
+
         }
         
     }];
@@ -90,6 +101,21 @@
 }
 
 - (IBAction)googleLogin:(id)sender {
+    CMUser *user = [[CMUser alloc] init];
+    [user loginWithSocialNetwork:@"google" viewController:self params:@{@"scope":@"openid"} callback:^(CMUserAccountResult resultCode, NSArray *messages) {
+        NSLog(@"resultCode: %d", resultCode);
+        
+        if (resultCode == CMUserAccountLoginSucceeded) {
+            //Logged in!
+            [self dismissViewControllerAnimated:YES completion:nil];
+            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+        } else {
+            //Look up and deal with error
+            NSLog(@"Message? %@", messages);
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+        
+    }];
 }
 
 

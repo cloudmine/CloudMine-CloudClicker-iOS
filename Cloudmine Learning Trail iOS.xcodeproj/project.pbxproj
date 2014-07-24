@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0345E05E3C24C31A7645D03 /* libPods-Cloudmine Learning Trail iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F42AEBE8641A43A480BF1008 /* libPods-Cloudmine Learning Trail iOS.a */; };
 		EF49426919785BFD003EC85B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF49426819785BFD003EC85B /* Foundation.framework */; };
 		EF49426B19785BFD003EC85B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF49426A19785BFD003EC85B /* CoreGraphics.framework */; };
 		EF49426D19785BFD003EC85B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF49426C19785BFD003EC85B /* UIKit.framework */; };
@@ -24,7 +25,6 @@
 		EF6AC815197D87A40092AF03 /* CMLTHighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6AC814197D87A40092AF03 /* CMLTHighScoreViewController.m */; };
 		EF81F83B197978BA000FA556 /* CMLTSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF81F83A197978BA000FA556 /* CMLTSignUpViewController.m */; };
 		EF81F83E197991F4000FA556 /* CMLTCloudController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF81F83D197991F4000FA556 /* CMLTCloudController.m */; };
-		EFDB52FB19799DF800AB0842 /* CloudMine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDB52FA19799DF800AB0842 /* CloudMine.framework */; };
 		EFDB52FD19799E2400AB0842 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDB52FC19799E2400AB0842 /* libz.dylib */; };
 		EFDB52FF19799E2D00AB0842 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDB52FE19799E2D00AB0842 /* MobileCoreServices.framework */; };
 		EFDB530119799E3900AB0842 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDB530019799E3900AB0842 /* SystemConfiguration.framework */; };
@@ -44,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D82C5FFBA1C46458A9D3B22 /* Pods-Cloudmine Learning Trail iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cloudmine Learning Trail iOS.xcconfig"; path = "Pods/Pods-Cloudmine Learning Trail iOS.xcconfig"; sourceTree = "<group>"; };
 		EF49426519785BFD003EC85B /* Cloudmine Learning Trail iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cloudmine Learning Trail iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF49426819785BFD003EC85B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EF49426A19785BFD003EC85B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,7 +70,6 @@
 		EF81F83A197978BA000FA556 /* CMLTSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMLTSignUpViewController.m; sourceTree = "<group>"; };
 		EF81F83C197991F4000FA556 /* CMLTCloudController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMLTCloudController.h; sourceTree = "<group>"; };
 		EF81F83D197991F4000FA556 /* CMLTCloudController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMLTCloudController.m; sourceTree = "<group>"; };
-		EFDB52FA19799DF800AB0842 /* CloudMine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CloudMine.framework; sourceTree = "<group>"; };
 		EFDB52FC19799E2400AB0842 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		EFDB52FE19799E2D00AB0842 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		EFDB530019799E3900AB0842 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -77,6 +77,7 @@
 		EFDB530419799E4B00AB0842 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EFDB53061979A97000AB0842 /* CMScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMScore.h; sourceTree = "<group>"; };
 		EFDB53071979A97000AB0842 /* CMScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMScore.m; sourceTree = "<group>"; };
+		F42AEBE8641A43A480BF1008 /* libPods-Cloudmine Learning Trail iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cloudmine Learning Trail iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +93,7 @@
 				EF49426B19785BFD003EC85B /* CoreGraphics.framework in Frameworks */,
 				EF49426D19785BFD003EC85B /* UIKit.framework in Frameworks */,
 				EF49426919785BFD003EC85B /* Foundation.framework in Frameworks */,
-				EFDB52FB19799DF800AB0842 /* CloudMine.framework in Frameworks */,
+				C0345E05E3C24C31A7645D03 /* libPods-Cloudmine Learning Trail iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +117,7 @@
 				EF49429019785BFD003EC85B /* Cloudmine Learning Trail iOSTests */,
 				EF49426719785BFD003EC85B /* Frameworks */,
 				EF49426619785BFD003EC85B /* Products */,
+				8D82C5FFBA1C46458A9D3B22 /* Pods-Cloudmine Learning Trail iOS.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,11 +138,11 @@
 				EFDB530019799E3900AB0842 /* SystemConfiguration.framework */,
 				EFDB52FE19799E2D00AB0842 /* MobileCoreServices.framework */,
 				EFDB52FC19799E2400AB0842 /* libz.dylib */,
-				EFDB52FA19799DF800AB0842 /* CloudMine.framework */,
 				EF49426819785BFD003EC85B /* Foundation.framework */,
 				EF49426A19785BFD003EC85B /* CoreGraphics.framework */,
 				EF49426C19785BFD003EC85B /* UIKit.framework */,
 				EF49428A19785BFD003EC85B /* XCTest.framework */,
+				F42AEBE8641A43A480BF1008 /* libPods-Cloudmine Learning Trail iOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -203,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF49429A19785BFD003EC85B /* Build configuration list for PBXNativeTarget "Cloudmine Learning Trail iOS" */;
 			buildPhases = (
+				6088B8B2367B4F44AA9114C1 /* Check Pods Manifest.lock */,
 				EF49426119785BFD003EC85B /* Sources */,
 				EF49426219785BFD003EC85B /* Frameworks */,
 				EF49426319785BFD003EC85B /* Resources */,
+				D136A753384345909D79ACCB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -288,6 +292,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6088B8B2367B4F44AA9114C1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D136A753384345909D79ACCB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Cloudmine Learning Trail iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EF49426119785BFD003EC85B /* Sources */ = {
@@ -424,9 +461,11 @@
 		};
 		EF49429B19785BFD003EC85B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D82C5FFBA1C46458A9D3B22 /* Pods-Cloudmine Learning Trail iOS.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Charles Burnett (4U77TFXKWN)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -439,6 +478,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "F3EDB434-058B-467E-A2C8-E205081EFE7A";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -446,6 +486,7 @@
 		};
 		EF49429C19785BFD003EC85B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D82C5FFBA1C46458A9D3B22 /* Pods-Cloudmine Learning Trail iOS.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -461,6 +502,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "F3EDB434-058B-467E-A2C8-E205081EFE7A";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

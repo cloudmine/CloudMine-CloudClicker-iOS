@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 CloudMine. All rights reserved.
 //
 
-#import <CloudMine/CloudMine.h>
+#import "CloudMine.h"
 
 @interface CMScore : CMObject
 

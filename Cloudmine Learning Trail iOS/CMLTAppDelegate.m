@@ -7,9 +7,8 @@
 //
 
 #import "CMLTAppDelegate.h"
-#import <CloudMine/CloudMine.h>
 
-@implementation CMLTAppDelegate
+@implementation CMLTAppDelegate 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -19,7 +18,7 @@
     credentials.appSecret = @"E52F3E3F8E234F3EBB886FD2986A7A85";
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

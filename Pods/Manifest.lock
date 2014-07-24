@@ -1,0 +1,16 @@
+PODS:
+  - AFNetworking (1.3.4)
+  - CloudMine (1.6.5):
+    - AFNetworking (~> 1.3.4)
+    - MAObjCRuntime (~> 0.0.1)
+  - MAObjCRuntime (0.0.1)
+
+DEPENDENCIES:
+  - CloudMine
+
+SPEC CHECKSUMS:
+  AFNetworking: 80c4e0652b08eb34e25b9c0ff3c82556fe5967b4
+  CloudMine: 20a74dc717a0866fcec358d5c223c1bf91e866e6
+  MAObjCRuntime: 9e99082c438f06c209203dbd77083cc308d9216a
+
+COCOAPODS: 0.32.1
