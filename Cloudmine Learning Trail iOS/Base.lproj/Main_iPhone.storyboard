@@ -240,6 +240,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="didPressSignUp:" destination="6aa-QU-muW" eventType="touchUpInside" id="AaV-mR-HLf"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_backdrop" translatesAutoresizingMaskIntoConstraints="NO" id="HyM-vu-aQg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
@@ -258,9 +261,11 @@
                         <outlet property="emailField" destination="M9s-MV-bBM" id="qep-FW-N55"/>
                         <outlet property="nameField" destination="LuQ-FV-DhC" id="KmI-Dr-5yD"/>
                         <outlet property="passwordField" destination="dCP-KU-0uo" id="Ata-Se-5KV"/>
+                        <segue destination="Gmb-Xl-Y0m" kind="unwind" identifier="signupSegue" unwindAction="unwindToThisViewController:" id="aBR-EQ-RDI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWi-ii-lhh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Gmb-Xl-Y0m" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1278" y="-497"/>
         </scene>
@@ -430,10 +435,10 @@
             </objects>
             <point key="canvasLocation" x="1640" y="59"/>
         </scene>
-        <!--View Controller-->
+        <!--Reset View Controller-->
         <scene sceneID="DGD-yU-YYG">
             <objects>
-                <viewController id="OvL-TF-fbH" sceneMemberID="viewController">
+                <viewController id="OvL-TF-fbH" customClass="CMLTResetViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f3C-SD-Sx9"/>
                         <viewControllerLayoutGuide type="bottom" id="gOq-Ej-Psg"/>
@@ -446,7 +451,10 @@
                                 <rect key="frame" x="20" y="174" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="OvL-TF-fbH" id="bSR-Ga-Idd"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recovery Email Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5J9-nV-Lt7">
                                 <rect key="frame" x="20" y="154" width="136" height="21"/>
@@ -463,6 +471,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="didPressSubmit:" destination="OvL-TF-fbH" eventType="touchUpInside" id="viT-Vz-YNu"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_backdrop" translatesAutoresizingMaskIntoConstraints="NO" id="ciw-S7-hUg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
@@ -476,6 +487,9 @@
                         <color key="backgroundColor" red="0.29019607843137252" green="0.62352941176470589" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="fNA-F3-t6G"/>
+                    <connections>
+                        <outlet property="resetTextField" destination="e2G-7X-b5C" id="0YH-o0-Ajr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fl-yX-MVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

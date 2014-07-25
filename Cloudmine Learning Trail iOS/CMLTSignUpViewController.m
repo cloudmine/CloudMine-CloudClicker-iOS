@@ -7,7 +7,7 @@
 //
 
 #import "CMLTSignUpViewController.h"
-
+#import "Cloudmine.h"
 @interface CMLTSignUpViewController ()
 
 @end
@@ -26,6 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.view.backgroundColor = [UIColor clearColor];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 
@@ -51,11 +57,9 @@
 */
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField == _confirmPasswordField) {
-        [textField resignFirstResponder];
-    }
+
     
-    else if (textField == _nameField) {
+    if (textField == _nameField) {
         [_emailField becomeFirstResponder];
     }
     
@@ -66,17 +70,48 @@
     else if (textField == _passwordField) {
         [_confirmPasswordField becomeFirstResponder];
     }
+    else
+    {
+        if (![_passwordField.text isEqualToString:_confirmPasswordField.text] ) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Passwords do not match" message:@"Your password fields do not match" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
+            [alert show];
+        }
+        [textField resignFirstResponder];
+    }
     return YES;
 }
 
 - (void)keyboardDidShow:(NSNotification *)note
 {
-    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - 100, self.view.frame.size.width, self.view.frame.size.height);
+    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - 120, self.view.frame.size.width, self.view.frame.size.height);
 }
 
 - (void)keyboardWillHide:(NSNotification *)note
 {
-    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 100, self.view.frame.size.width, self.view.frame.size.height);
+    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 120, self.view.frame.size.width, self.view.frame.size.height);
 }
 
+- (IBAction)didPressSignUp:(id)sender {
+    CMUser *user = [[CMUser alloc] initWithEmail:_emailField.text andPassword:_passwordField.text];
+    [user createAccountWithCallback:^(CMUserAccountResult resultCode, NSArray *messages) {
+        switch(resultCode) {
+            case CMUserAccountCreateSucceeded:
+                // did it!
+                NSLog(@"Account Created");
+                [self performSegueWithIdentifier:@"signupSegue" sender:self];
+                break;
+            case CMUserAccountCreateFailedInvalidRequest:
+                NSLog(@"Invalid Request");
+                // forgot the email/username or password
+                break;
+            case CMUserAccountCreateFailedDuplicateAccount:
+            {
+                // account with this email already exists
+                UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Account Exists" message:@"An account with this email already exists" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+                [alert show];
+                break;
+            }
+        }
+    }];
+}
 @end

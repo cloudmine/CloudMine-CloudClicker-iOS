@@ -40,7 +40,7 @@
     if (textField == _PasswordTextField) {
         [textField resignFirstResponder];
     } else if (textField == _EmailTextField) {
-        [self.PasswordTextField becomeFirstResponder];
+        [_PasswordTextField becomeFirstResponder];
     }
     return YES;
 }

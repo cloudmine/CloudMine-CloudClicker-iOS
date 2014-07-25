@@ -1,19 +1,18 @@
 //
-//  CMLTHighScoreViewController.m
+//  CMLTResetViewController.m
 //  Cloudmine Learning Trail iOS
 //
-//  Created by Charles Burnett on 7/21/14.
+//  Created by Charles Burnett on 7/25/14.
 //  Copyright (c) 2014 CloudMine. All rights reserved.
 //
 
-#import "CMLTHighScoreViewController.h"
-#import <Cloudmine/CloudMine.h>
-#import "CMScore.h"
-@interface CMLTHighScoreViewController ()
+#import "CMLTResetViewController.h"
+#import "Cloudmine.h"
+@interface CMLTResetViewController ()
 
 @end
 
-@implementation CMLTHighScoreViewController
+@implementation CMLTResetViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,38 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.view.backgroundColor = [UIColor clearColor];
-    
-    CMStore *store = [CMStore defaultStore];
-
-    NSArray *keys = [NSArray arrayWithObject:_objectId];
-    if (keys !=nil) {
-        
-    
-    [store objectsWithKeys:keys
-         additionalOptions:nil
-                  callback:^(CMObjectFetchResponse *response) {
-                      NSLog(@"Objects: %@", response.objects);
-                      if (response.objects.count > 0) {
-                          CMScore *score = [response.objects objectAtIndex:0];
-                          [self updateScoresWithRedScore:score.redCloudScore blueScore:score.blueCloudScore andTotalScore:score.totalCloudScore];
-                      }
-                  }
-     ];
-    }
     // Do any additional setup after loading the view.
-}
-
-- (void) updateScoresWithRedScore:(int)red blueScore: (int) blue andTotalScore:(int)total{
-    [_RedScoreLabel setText:[NSString stringWithFormat:@"Red Cloud: %d", red]];
-    [_blueScoreLabel setText:[NSString stringWithFormat:@"Blue Cloud: %d", blue]];
-    [_totalScoreLabel setText:[NSString stringWithFormat:@"Total Clicks: %d", total]];
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,5 +50,30 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 
+- (IBAction)didPressSubmit:(id)sender {
+    CMUser *user = [[CMUser alloc] initWithEmail:_resetTextField.text andPassword:@""];
+    
+    [user resetForgottenPasswordWithCallback:^(CMUserAccountResult resultCode, NSArray *messages) {
+        switch(resultCode) {
+            case CMUserAccountPasswordResetEmailSent:
+            {
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Recovery Email Sent" message:@"An email has been sent to the specified address" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+                [alert show];
+                break;
+
+            }
+            case CMUserAccountOperationFailedUnknownAccount:
+            {
+                UIAlertView *failedAlert = [[UIAlertView alloc]initWithTitle:@"Reset Failed" message:@"An error occured" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+                [failedAlert show];
+                break;
+            }
+        }
+    }];
+}
 @end

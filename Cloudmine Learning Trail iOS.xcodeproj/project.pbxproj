@@ -22,6 +22,7 @@
 		EF49428D19785BFD003EC85B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF49426C19785BFD003EC85B /* UIKit.framework */; };
 		EF49429519785BFD003EC85B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EF49429319785BFD003EC85B /* InfoPlist.strings */; };
 		EF49429719785BFD003EC85B /* Cloudmine_Learning_Trail_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF49429619785BFD003EC85B /* Cloudmine_Learning_Trail_iOSTests.m */; };
+		EF5B067D1982D46600D94F89 /* CMLTResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5B067C1982D46600D94F89 /* CMLTResetViewController.m */; };
 		EF6AC815197D87A40092AF03 /* CMLTHighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6AC814197D87A40092AF03 /* CMLTHighScoreViewController.m */; };
 		EF81F83B197978BA000FA556 /* CMLTSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF81F83A197978BA000FA556 /* CMLTSignUpViewController.m */; };
 		EF81F83E197991F4000FA556 /* CMLTCloudController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF81F83D197991F4000FA556 /* CMLTCloudController.m */; };
@@ -64,6 +65,8 @@
 		EF49429219785BFD003EC85B /* Cloudmine Learning Trail iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Cloudmine Learning Trail iOSTests-Info.plist"; sourceTree = "<group>"; };
 		EF49429419785BFD003EC85B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EF49429619785BFD003EC85B /* Cloudmine_Learning_Trail_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cloudmine_Learning_Trail_iOSTests.m; sourceTree = "<group>"; };
+		EF5B067B1982D46600D94F89 /* CMLTResetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMLTResetViewController.h; sourceTree = "<group>"; };
+		EF5B067C1982D46600D94F89 /* CMLTResetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMLTResetViewController.m; sourceTree = "<group>"; };
 		EF6AC813197D87A40092AF03 /* CMLTHighScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMLTHighScoreViewController.h; sourceTree = "<group>"; };
 		EF6AC814197D87A40092AF03 /* CMLTHighScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMLTHighScoreViewController.m; sourceTree = "<group>"; };
 		EF81F839197978BA000FA556 /* CMLTSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMLTSignUpViewController.h; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 				EF81F83D197991F4000FA556 /* CMLTCloudController.m */,
 				EF6AC813197D87A40092AF03 /* CMLTHighScoreViewController.h */,
 				EF6AC814197D87A40092AF03 /* CMLTHighScoreViewController.m */,
+				EF5B067B1982D46600D94F89 /* CMLTResetViewController.h */,
+				EF5B067C1982D46600D94F89 /* CMLTResetViewController.m */,
 				EFDB53061979A97000AB0842 /* CMScore.h */,
 				EFDB53071979A97000AB0842 /* CMScore.m */,
 				EF49428319785BFD003EC85B /* Images.xcassets */,
@@ -337,6 +342,7 @@
 				EFDB53081979A97000AB0842 /* CMScore.m in Sources */,
 				EF81F83E197991F4000FA556 /* CMLTCloudController.m in Sources */,
 				EF81F83B197978BA000FA556 /* CMLTSignUpViewController.m in Sources */,
+				EF5B067D1982D46600D94F89 /* CMLTResetViewController.m in Sources */,
 				EF49428219785BFD003EC85B /* CMLTViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
