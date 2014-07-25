@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0345E05E3C24C31A7645D03 /* libPods-Cloudmine Learning Trail iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F42AEBE8641A43A480BF1008 /* libPods-Cloudmine Learning Trail iOS.a */; };
+		EF130FAA1982EB58006A79CF /* REMOVE BEFORE RELEASE.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EF130FA91982EB58006A79CF /* REMOVE BEFORE RELEASE.rtf */; };
 		EF49426919785BFD003EC85B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF49426819785BFD003EC85B /* Foundation.framework */; };
 		EF49426B19785BFD003EC85B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF49426A19785BFD003EC85B /* CoreGraphics.framework */; };
 		EF49426D19785BFD003EC85B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF49426C19785BFD003EC85B /* UIKit.framework */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		8D82C5FFBA1C46458A9D3B22 /* Pods-Cloudmine Learning Trail iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cloudmine Learning Trail iOS.xcconfig"; path = "Pods/Pods-Cloudmine Learning Trail iOS.xcconfig"; sourceTree = "<group>"; };
+		EF130FA91982EB58006A79CF /* REMOVE BEFORE RELEASE.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "REMOVE BEFORE RELEASE.rtf"; sourceTree = "<group>"; };
 		EF49426519785BFD003EC85B /* Cloudmine Learning Trail iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cloudmine Learning Trail iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF49426819785BFD003EC85B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EF49426A19785BFD003EC85B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -177,6 +179,7 @@
 		EF49426F19785BFD003EC85B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EF130FA91982EB58006A79CF /* REMOVE BEFORE RELEASE.rtf */,
 				EF49427019785BFD003EC85B /* Cloudmine Learning Trail iOS-Info.plist */,
 				EF49427119785BFD003EC85B /* InfoPlist.strings */,
 				EF49427419785BFD003EC85B /* main.m */,
@@ -283,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF49428419785BFD003EC85B /* Images.xcassets in Resources */,
+				EF130FAA1982EB58006A79CF /* REMOVE BEFORE RELEASE.rtf in Resources */,
 				EF49427C19785BFD003EC85B /* Main_iPhone.storyboard in Resources */,
 				EF49427319785BFD003EC85B /* InfoPlist.strings in Resources */,
 			);

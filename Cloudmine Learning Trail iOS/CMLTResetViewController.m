@@ -69,7 +69,7 @@
             }
             case CMUserAccountOperationFailedUnknownAccount:
             {
-                UIAlertView *failedAlert = [[UIAlertView alloc]initWithTitle:@"Reset Failed" message:@"An error occured" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+                UIAlertView *failedAlert = [[UIAlertView alloc]initWithTitle:@"Reset Failed" message:@"An error occured. Please check your email address and try again." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
                 [failedAlert show];
                 break;
             }

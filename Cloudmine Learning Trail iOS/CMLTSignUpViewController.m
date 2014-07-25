@@ -100,10 +100,16 @@
                 NSLog(@"Account Created");
                 [self performSegueWithIdentifier:@"signupSegue" sender:self];
                 break;
+            
             case CMUserAccountCreateFailedInvalidRequest:
+            {
                 NSLog(@"Invalid Request");
+                UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Invalid Request" message:@"There was a problem creating your account with these credentials" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+                [alert show];
                 // forgot the email/username or password
                 break;
+            }
+            
             case CMUserAccountCreateFailedDuplicateAccount:
             {
                 // account with this email already exists
