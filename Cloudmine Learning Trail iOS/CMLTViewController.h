@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Cloudmine.h"
 @interface CMLTViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *EmailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *PasswordTextField;
+@property (strong, nonatomic) CMUser *user;
 - (IBAction)login:(id)sender;
 - (IBAction)facebookLogin:(id)sender;
 - (IBAction)googleLogin:(id)sender;

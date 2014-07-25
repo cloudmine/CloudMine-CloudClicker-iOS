@@ -12,6 +12,7 @@
 @interface CMLTCloudController : UIViewController
 - (IBAction)didPressBlueCloud:(id)sender;
 - (IBAction)didPressRedCloud:(id)sender;
+- (IBAction)didPressLogout:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *blueCloudLabel;
 @property (weak, nonatomic) IBOutlet UILabel *redCloudLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalCloudLabel;

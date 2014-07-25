@@ -45,26 +45,30 @@
     return YES;
 }
 
+- (void) initializePush
+{
+    [CMStore defaultStore].user = _user;
+    [[CMStore defaultStore] registerForPushNotifications:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)
+                                                callback:^(CMDeviceTokenResult result) {
+                                                    if (result == CMDeviceTokenUploadSuccess || result == CMDeviceTokenUpdated) {
+                                                        NSLog(@"Registered successfully!");
+                                                    } else {
+                                                        NSLog(@"Uh oh, something happened: %d", result);
+                                                    }
+                                                }];
+}
+
 - (IBAction)login:(id)sender {
-    CMUser *user = [[CMUser alloc] initWithEmail:[_EmailTextField text] andPassword:[_PasswordTextField text]];
+    _user = [[CMUser alloc] initWithEmail:[_EmailTextField text] andPassword:[_PasswordTextField text]];
     UIAlertView * passwordAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Invalid Credentials" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
     UIAlertView * existenceAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"An account with those credentials does not exist" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
 
     // You can use "anotherUser" here in the same way!
-    [user loginWithCallback:^(CMUserAccountResult resultCode, NSArray *messages) {
+    [_user loginWithCallback:^(CMUserAccountResult resultCode, NSArray *messages) {
         switch(resultCode) {
             case CMUserAccountLoginSucceeded:
                 // success! the user now has a session token
-                [CMStore defaultStore].user = user;
-                [[CMStore defaultStore] registerForPushNotifications:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)
-                                                            callback:^(CMDeviceTokenResult result) {
-                                                                if (result == CMDeviceTokenUploadSuccess || result == CMDeviceTokenUpdated) {
-                                                                    NSLog(@"Registered successfully!");
-                                                                } else {
-                                                                    NSLog(@"Uh oh, something happened: %d", result);
-                                                                }
-                                                            }];
-                
+                [self initializePush];
                 [self performSegueWithIdentifier:@"loginSegue" sender:nil];
                 break;
             case CMUserAccountLoginFailedIncorrectCredentials:
@@ -80,13 +84,14 @@
 }
 
 - (IBAction)facebookLogin:(id)sender {
-    CMUser *user = [[CMUser alloc] init];
+    _user = [[CMUser alloc] init];
     
-    [user loginWithSocialNetwork:CMSocialNetworkFacebook viewController:self params:nil callback:^(CMUserAccountResult resultCode, NSArray *messages) {
+    [_user loginWithSocialNetwork:CMSocialNetworkFacebook viewController:self params:nil callback:^(CMUserAccountResult resultCode, NSArray *messages) {
         NSLog(@"resultCode: %d", resultCode);
 
         if (resultCode == CMUserAccountLoginSucceeded) {
             //Logged in!
+            [self initializePush];
             [self dismissViewControllerAnimated:YES completion:nil];
             [self performSegueWithIdentifier:@"loginSegue" sender:nil];
         } else {
@@ -101,12 +106,13 @@
 }
 
 - (IBAction)googleLogin:(id)sender {
-    CMUser *user = [[CMUser alloc] init];
-    [user loginWithSocialNetwork:@"google" viewController:self params:@{@"scope":@"openid"} callback:^(CMUserAccountResult resultCode, NSArray *messages) {
+    _user = [[CMUser alloc] init];
+    [_user loginWithSocialNetwork:@"google" viewController:self params:@{@"scope":@"openid"} callback:^(CMUserAccountResult resultCode, NSArray *messages) {
         NSLog(@"resultCode: %d", resultCode);
         
         if (resultCode == CMUserAccountLoginSucceeded) {
             //Logged in!
+            [self initializePush];
             [self dismissViewControllerAnimated:YES completion:nil];
             [self performSegueWithIdentifier:@"loginSegue" sender:nil];
         } else {
@@ -118,5 +124,9 @@
     }];
 }
 
+- (IBAction)unwindToThisViewController:(UIStoryboardSegue *)unwindSegue
+{
+    
+}
 
 @end

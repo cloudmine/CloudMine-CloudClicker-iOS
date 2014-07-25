@@ -97,4 +97,21 @@
     }];
 }
 
+- (IBAction)didPressLogout:(id)sender {
+    [[CMStore defaultStore].user logoutWithCallback:^(CMUserAccountResult resultCode, NSArray *messages) {
+        NSLog(@"This function is not happening.");
+
+        if (CMUserAccountLogoutSucceeded) {
+                    // success! the user is logged out
+            NSLog(@"This is happening.");
+            [self performSegueWithIdentifier:@"logoutSegue" sender:self];
+        }
+        else
+        {
+            // failed, the session token didn't correspond to any user
+            NSLog(@"This is not happening.");
+        }
+    }];
+}
+
 @end
