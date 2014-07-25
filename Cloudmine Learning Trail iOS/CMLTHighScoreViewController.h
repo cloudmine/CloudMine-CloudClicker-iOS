@@ -12,5 +12,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *RedScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *blueScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalScoreLabel;
-@property (weak, nonatomic) NSString *objectId;
 @end

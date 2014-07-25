@@ -24,6 +24,39 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    CMStore *store = [CMStore defaultStore];
+    
+    __block NSMutableArray * objectArray = [[NSMutableArray alloc] init];
+    [store allObjectsWithOptions:nil
+                        callback:^(CMObjectFetchResponse *response) {
+                            NSLog(@"Objects: %@", response.objects);
+                            objectArray = [NSMutableArray arrayWithArray:response.objects];
+                            
+                            int highscore = 0;
+                            int highredscore = 0;
+                            int highbluescore = 0;
+                            
+                            for (CMScore *score in objectArray) {
+                                if (highscore<score.totalCloudScore) {
+                                    highscore = score.totalCloudScore;
+                                }
+                                if (highredscore<score.redCloudScore) {
+                                    highredscore = score.redCloudScore;
+                                }
+                                if (highbluescore<score.blueCloudScore) {
+                                    highbluescore = score.blueCloudScore;
+                                }
+                            }
+                            
+                            NSLog(@"red: %d, blue: %d total: %d",highredscore,highbluescore,highscore);
+                            [self updateScoresWithRedScore:highredscore blueScore:highbluescore andTotalScore:highscore];
+                            
+                        }
+     ];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -34,23 +67,6 @@
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     
-    CMStore *store = [CMStore defaultStore];
-
-    NSArray *keys = [NSArray arrayWithObject:_objectId];
-    if (keys !=nil) {
-        
-    
-    [store objectsWithKeys:keys
-         additionalOptions:nil
-                  callback:^(CMObjectFetchResponse *response) {
-                      NSLog(@"Objects: %@", response.objects);
-                      if (response.objects.count > 0) {
-                          CMScore *score = [response.objects objectAtIndex:0];
-                          [self updateScoresWithRedScore:score.redCloudScore blueScore:score.blueCloudScore andTotalScore:score.totalCloudScore];
-                      }
-                  }
-     ];
-    }
     // Do any additional setup after loading the view.
 }
 
