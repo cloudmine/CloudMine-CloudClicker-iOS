@@ -30,7 +30,6 @@
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
-    self.navigationController.view.backgroundColor = [UIColor clearColor];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -83,12 +82,12 @@
 
 - (void)keyboardDidShow:(NSNotification *)note
 {
-    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - 120, self.view.frame.size.width, self.view.frame.size.height);
+    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - 110, self.view.frame.size.width, self.view.frame.size.height);
 }
 
 - (void)keyboardWillHide:(NSNotification *)note
 {
-    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 120, self.view.frame.size.width, self.view.frame.size.height);
+    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 110, self.view.frame.size.width, self.view.frame.size.height);
 }
 
 - (IBAction)didPressSignUp:(id)sender {
@@ -101,20 +100,20 @@
                 [self performSegueWithIdentifier:@"signupSegue" sender:self];
                 break;
             
-            case CMUserAccountCreateFailedInvalidRequest:
-            {
-                NSLog(@"Invalid Request");
-                UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Invalid Request" message:@"There was a problem creating your account with these credentials" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
-                [alert show];
-                // forgot the email/username or password
-                break;
-            }
-            
             case CMUserAccountCreateFailedDuplicateAccount:
             {
                 // account with this email already exists
                 UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Account Exists" message:@"An account with this email already exists" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
                 [alert show];
+                break;
+            }
+                
+            default:
+            {
+                NSLog(@"Invalid Request");
+                UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Invalid Request" message:@"There was a problem creating your account with these credentials" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+                [alert show];
+                // forgot the email/username or password
                 break;
             }
         }

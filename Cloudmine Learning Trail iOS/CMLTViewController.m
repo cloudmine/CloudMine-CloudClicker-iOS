@@ -19,7 +19,7 @@
     self.navigationController.navigationBar.hidden = YES;
 }
 
--(void) viewWillDisappear:(BOOL)animated
+-(void) viewDidDisappear:(BOOL)animated
 {
     self.navigationController.navigationBar.hidden = NO;
 }
@@ -60,8 +60,9 @@
 
 - (IBAction)login:(id)sender {
     _user = [[CMUser alloc] initWithEmail:[_EmailTextField text] andPassword:[_PasswordTextField text]];
-    UIAlertView * passwordAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Invalid Credentials" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-    UIAlertView * existenceAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"An account with those credentials does not exist" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+    UIAlertView * passwordAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Invalid Credentials" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+    UIAlertView * existenceAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"An account with those credentials does not exist" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+    UIAlertView * defaultAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"An Error occured in the login process." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
 
     // You can use "anotherUser" here in the same way!
     [_user loginWithCallback:^(CMUserAccountResult resultCode, NSArray *messages) {
@@ -79,6 +80,8 @@
                 [existenceAlert show];
                 // this account doesn't exist
                 break;
+            default:
+                [defaultAlert show];
         }
     }];
 }

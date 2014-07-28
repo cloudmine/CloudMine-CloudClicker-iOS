@@ -30,7 +30,7 @@
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
-    self.navigationController.view.backgroundColor = [UIColor clearColor];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -67,7 +67,7 @@
                 break;
 
             }
-            case CMUserAccountOperationFailedUnknownAccount:
+            default:
             {
                 UIAlertView *failedAlert = [[UIAlertView alloc]initWithTitle:@"Reset Failed" message:@"An error occured. Please check your email address and try again." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
                 [failedAlert show];

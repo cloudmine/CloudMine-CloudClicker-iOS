@@ -18,9 +18,9 @@
 
 - (id)initWithCoder:(NSCoder *)aCoder {
     if ((self = [super initWithCoder:aCoder])) {
-        _blueCloudScore = [aCoder decodeIntegerForKey:@"blueCloudScore"];
-        _redCloudScore = [aCoder decodeIntegerForKey:@"redCloudScore"];
-        _totalCloudScore = [aCoder decodeIntegerForKey:@"totalCloudScore"];
+        _blueCloudScore = (int)[aCoder decodeIntegerForKey:@"blueCloudScore"];
+        _redCloudScore = (int)[aCoder decodeIntegerForKey:@"redCloudScore"];
+        _totalCloudScore = (int)[aCoder decodeIntegerForKey:@"totalCloudScore"];
     }
     return self;
 }

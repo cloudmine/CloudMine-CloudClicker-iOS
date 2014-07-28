@@ -34,11 +34,11 @@
 
 }
 
--(void) viewWillDisappear:(BOOL)animated
+-(void) viewDidDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-    [self.navigationItem setHidesBackButton:NO animated:YES];
+    self.navigationItem.hidesBackButton = NO;
     self.navigationController.navigationBar.hidden = NO;
 
 
@@ -47,7 +47,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBar.topItem.hidesBackButton = NO;
 
     // Do any additional setup after loading the view.
     _cloudScore = [[CMScore alloc] init];
