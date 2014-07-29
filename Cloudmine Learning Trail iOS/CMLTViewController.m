@@ -16,17 +16,25 @@
 
 -(void) viewWillAppear:(BOOL)animated
 {
-    self.navigationController.navigationBar.hidden = YES;
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
--(void) viewDidDisappear:(BOOL)animated
+-(void) viewWillDisappear:(BOOL)animated
 {
-    self.navigationController.navigationBar.hidden = NO;
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

@@ -27,21 +27,16 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-    self.navigationItem.hidesBackButton = YES;
     self.navigationController.navigationBar.hidden = YES;
-
-
 }
 
 -(void) viewDidDisappear:(BOOL)animated
 {
-    [super viewWillDisappear:animated];
+    [super viewDidDisappear:animated];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-    self.navigationItem.hidesBackButton = NO;
     self.navigationController.navigationBar.hidden = NO;
-
-
 }
 
 - (void)viewDidLoad
