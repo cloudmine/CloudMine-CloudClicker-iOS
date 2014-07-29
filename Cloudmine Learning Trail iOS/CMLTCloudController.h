@@ -19,6 +19,7 @@
 
 @property (strong, nonatomic)  CMScore *cloudScore;
 
+@property (strong, nonatomic) NSString * user;
 @property int blueCount;
 @property int redCount;
 @property int totalCount;

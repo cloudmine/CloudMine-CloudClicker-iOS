@@ -27,7 +27,6 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     self.navigationController.navigationBar.hidden = YES;
 }
@@ -50,9 +49,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     // Do any additional setup after loading the view.
     _cloudScore = [[CMScore alloc] init];
+    _cloudScore.username = _user;
     _cloudScore.blueCloudScore = 0;
     _cloudScore.redCloudScore = 0;
     _cloudScore.totalCloudScore = 0;

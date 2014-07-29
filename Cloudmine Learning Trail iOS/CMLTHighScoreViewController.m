@@ -34,6 +34,10 @@
                             NSLog(@"Objects: %@", response.objects);
                             objectArray = [NSMutableArray arrayWithArray:response.objects];
                             
+                            NSString *highUser;
+                            NSString *highBlueUser;
+                            NSString *highRedUser;
+
                             int highscore = 0;
                             int highredscore = 0;
                             int highbluescore = 0;
@@ -41,18 +45,21 @@
                             for (CMScore *score in objectArray) {
                                 if (highscore<score.totalCloudScore) {
                                     highscore = score.totalCloudScore;
+                                    highUser = score.username;
                                 }
                                 if (highredscore<score.redCloudScore) {
                                     highredscore = score.redCloudScore;
+                                    highRedUser = score.username;
                                 }
                                 if (highbluescore<score.blueCloudScore) {
                                     highbluescore = score.blueCloudScore;
+                                    highBlueUser = score.username;
                                 }
-                            }
-                            
+                            }                            
                             NSLog(@"red: %d, blue: %d total: %d",highredscore,highbluescore,highscore);
-                            [self updateScoresWithRedScore:highredscore blueScore:highbluescore andTotalScore:highscore];
-                            
+                            [_RedScoreLabel setText:[NSString stringWithFormat:@"Red Cloud: %d - %@", highredscore, highRedUser]];
+                            [_blueScoreLabel setText:[NSString stringWithFormat:@"Blue Cloud: %d - %@", highbluescore, highBlueUser]];
+                            [_totalScoreLabel setText:[NSString stringWithFormat:@"Total Clicks: %d - %@", highscore, highUser]];
                         }
      ];
 }
@@ -62,13 +69,6 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
-}
-
-- (void) updateScoresWithRedScore:(int)red blueScore: (int) blue andTotalScore:(int)total{
-    [_RedScoreLabel setText:[NSString stringWithFormat:@"Red Cloud: %d", red]];
-    [_blueScoreLabel setText:[NSString stringWithFormat:@"Blue Cloud: %d", blue]];
-    [_totalScoreLabel setText:[NSString stringWithFormat:@"Total Clicks: %d", total]];
-
 }
 
 - (void)didReceiveMemoryWarning

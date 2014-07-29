@@ -9,7 +9,7 @@
 #import "CloudMine.h"
 
 @interface CMScore : CMObject
-
+@property NSString * username;
 @property int blueCloudScore;
 @property int redCloudScore;
 @property int totalCloudScore;

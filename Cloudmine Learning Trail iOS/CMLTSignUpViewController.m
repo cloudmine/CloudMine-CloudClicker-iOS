@@ -87,7 +87,7 @@
 }
 
 - (IBAction)didPressSignUp:(id)sender {
-    CMUser *user = [[CMUser alloc] initWithEmail:_emailField.text andPassword:_passwordField.text];
+    CMUser *user = [[CMUser alloc] initWithEmail:_emailField.text andUsername:_nameField.text andPassword:_passwordField.text];
     [user createAccountWithCallback:^(CMUserAccountResult resultCode, NSArray *messages) {
         switch(resultCode) {
             case CMUserAccountCreateSucceeded:

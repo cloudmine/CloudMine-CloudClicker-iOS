@@ -8,6 +8,8 @@
 
 #import "CMLTViewController.h"
 #import "CloudMine.h"
+#import "CMLTCloudController.h"
+
 @interface CMLTViewController ()
 
 @end
@@ -35,9 +37,8 @@
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
-	// Do any additional setup after loading the view, typically from a nib.
 }
-
+ 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -109,7 +110,6 @@
             //Look up and deal with error
             NSLog(@"Message? %@", messages);
             [self dismissViewControllerAnimated:YES completion:nil];
-
         }
         
     }];
@@ -133,6 +133,19 @@
         }
         
     }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"loginSegue"])
+    {
+        // Get reference to the destination view controller
+        CMLTCloudController *cc = [segue destinationViewController];
+        
+        // Pass any objects to the view controller here, like...
+        cc.user = _user.username;
+    }
 }
 
 - (IBAction)unwindToThisViewController:(UIStoryboardSegue *)unwindSegue
