@@ -39,6 +39,14 @@
     self.navigationController.navigationBar.hidden = NO;
 }
 
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [_cloudScore save:^(CMObjectUploadResponse *response) {
+        NSLog(@"Status: %@", [response.uploadStatuses objectForKey:_cloudScore.objectId]);
+    }];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -72,9 +80,6 @@
     [_blueCloudLabel setText:[NSString stringWithFormat:@"Clicks: %d", _cloudScore.blueCloudScore]];
     [_totalCloudLabel setText:[NSString stringWithFormat:@"Total Clicks: %d", _cloudScore.totalCloudScore]];
     
-    [_cloudScore save:^(CMObjectUploadResponse *response) {
-        NSLog(@"Status: %@", [response.uploadStatuses objectForKey:_cloudScore.objectId]);
-    }];
 }
 
 - (IBAction)didPressRedCloud:(id)sender {
@@ -82,10 +87,6 @@
     _cloudScore.totalCloudScore++;
     [_redCloudLabel setText:[NSString stringWithFormat:@"Clicks: %d", _cloudScore.redCloudScore]];
     [_totalCloudLabel setText:[NSString stringWithFormat:@"Total Clicks: %d", _cloudScore.totalCloudScore]];
-    
-    [_cloudScore save:^(CMObjectUploadResponse *response) {
-        NSLog(@"Status: %@", [response.uploadStatuses objectForKey:_cloudScore.objectId]);
-    }];
 }
 
 - (IBAction)didPressLogout:(id)sender {
