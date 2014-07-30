@@ -8,7 +8,8 @@
 
 #import "CMLTHighScoreViewController.h"
 #import <Cloudmine/CloudMine.h>
-#import "CMScore.h"
+#import "CMLTUser.h"
+
 @interface CMLTHighScoreViewController ()
 
 @end
@@ -26,13 +27,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    CMStore *store = [CMStore defaultStore];
-    
-    __block NSMutableArray * objectArray = [[NSMutableArray alloc] init];
-    [store allObjectsWithOptions:nil
-                        callback:^(CMObjectFetchResponse *response) {
-                            NSLog(@"Objects: %@", response.objects);
-                            objectArray = [NSMutableArray arrayWithArray:response.objects];
+    [CMLTUser allUsersWithCallback:^(NSArray *users, NSDictionary *errors) {
+                            NSLog(@"Users: %@", users);
+                            NSArray * objectArray = [NSArray arrayWithArray:users];
                             
                             NSString *highUser;
                             NSString *highBlueUser;
@@ -42,18 +39,18 @@
                             int highredscore = 0;
                             int highbluescore = 0;
                             
-                            for (CMScore *score in objectArray) {
-                                if (highscore<score.totalCloudScore) {
-                                    highscore = score.totalCloudScore;
-                                    highUser = score.username;
+                            for (CMLTUser *user in objectArray) {
+                                if (highscore< user.clicks) {
+                                    highscore = user.clicks;
+                                    highUser = user.name;
                                 }
-                                if (highredscore<score.redCloudScore) {
-                                    highredscore = score.redCloudScore;
-                                    highRedUser = score.username;
+                                if (highredscore<user.red) {
+                                    highredscore = user.red;
+                                    highRedUser = user.name;
                                 }
-                                if (highbluescore<score.blueCloudScore) {
-                                    highbluescore = score.blueCloudScore;
-                                    highBlueUser = score.username;
+                                if (highbluescore<user.blue) {
+                                    highbluescore = user.blue;
+                                    highBlueUser = user.name;
                                 }
                             }                            
                             NSLog(@"red: %d, blue: %d total: %d",highredscore,highbluescore,highscore);

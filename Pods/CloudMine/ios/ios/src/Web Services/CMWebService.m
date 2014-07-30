@@ -1151,6 +1151,7 @@ NSString * const JSONErrorKey = @"JSONErrorKey";
         
         NSError *parseErr = nil;
         NSDictionary *responseBody = [NSDictionary dictionary];
+        NSLog(@"Response Body: %@", responseBody);
         if (responseString != nil) {
             NSDictionary *parsedResponseBody = [NSJSONSerialization JSONObjectWithData:operation.responseData
                                                                                options:0

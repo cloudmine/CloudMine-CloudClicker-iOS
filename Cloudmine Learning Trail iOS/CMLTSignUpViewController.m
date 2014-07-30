@@ -8,6 +8,7 @@
 
 #import "CMLTSignUpViewController.h"
 #import "Cloudmine.h"
+#import "CMLTUser.h"
 @interface CMLTSignUpViewController ()
 
 @end
@@ -87,7 +88,9 @@
 }
 
 - (IBAction)didPressSignUp:(id)sender {
-    CMUser *user = [[CMUser alloc] initWithEmail:_emailField.text andUsername:_nameField.text andPassword:_passwordField.text];
+    CMLTUser *user = [[CMLTUser alloc] initWithEmail:_emailField.text andUsername:_nameField.text andPassword:_passwordField.text];
+    user.name = _nameField.text;
+    
     [user createAccountWithCallback:^(CMUserAccountResult resultCode, NSArray *messages) {
         switch(resultCode) {
             case CMUserAccountCreateSucceeded:

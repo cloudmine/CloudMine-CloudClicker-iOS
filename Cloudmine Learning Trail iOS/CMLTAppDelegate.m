@@ -15,7 +15,7 @@
     // Override point for customization after application launch.
     CMAPICredentials *credentials = [CMAPICredentials sharedInstance];
     credentials.appIdentifier = @"33a972520cb447bda768b5d93ceb266f";
-    credentials.appSecret = @"E52F3E3F8E234F3EBB886FD2986A7A85";
+    credentials.appSecret = @"abd9cd9a6c1c4d529bff4b3fa1ccd51c";
     return YES;
 }
 

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CMScore.h"
+#import "CMLTCloud.h"
+#import "CMLTUser.h"
 
-@interface CMLTCloudController : UIViewController
+@interface CMLTCloudController : UIViewController <UIAlertViewDelegate>
 - (IBAction)didPressBlueCloud:(id)sender;
 - (IBAction)didPressRedCloud:(id)sender;
 - (IBAction)didPressLogout:(id)sender;
@@ -17,9 +18,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *redCloudLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalCloudLabel;
 
-@property (strong, nonatomic)  CMScore *cloudScore;
+@property (strong, nonatomic) CMLTCloud * redCloud;
+@property (strong, nonatomic) CMLTCloud * blueCloud;
 
-@property (strong, nonatomic) NSString * user;
+@property (strong, nonatomic) CMLTUser *user;
+@property (strong, nonatomic) NSString *userString;
 @property int blueCount;
 @property int redCount;
 @property int totalCount;

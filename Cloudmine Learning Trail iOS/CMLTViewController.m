@@ -68,7 +68,7 @@
 }
 
 - (IBAction)login:(id)sender {
-    _user = [[CMUser alloc] initWithEmail:[_EmailTextField text] andPassword:[_PasswordTextField text]];
+    _user = [[CMLTUser alloc] initWithEmail:[_EmailTextField text] andPassword:[_PasswordTextField text]];
     UIAlertView * passwordAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Invalid Credentials" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
     UIAlertView * existenceAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"An account with those credentials does not exist" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
     UIAlertView * defaultAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"An Error occured in the login process." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
@@ -96,10 +96,10 @@
 }
 
 - (IBAction)facebookLogin:(id)sender {
-    _user = [[CMUser alloc] init];
-    
+    _user = [[CMLTUser alloc] init];
+
     [_user loginWithSocialNetwork:CMSocialNetworkFacebook viewController:self params:nil callback:^(CMUserAccountResult resultCode, NSArray *messages) {
-        NSLog(@"resultCode: %d", resultCode);
+        NSLog(@"user.token: %@", _user.token);
 
         if (resultCode == CMUserAccountLoginSucceeded) {
             //Logged in!
@@ -117,7 +117,7 @@
 }
 
 - (IBAction)googleLogin:(id)sender {
-    _user = [[CMUser alloc] init];
+    _user = [[CMLTUser alloc] init];
     [_user loginWithSocialNetwork:@"google" viewController:self params:@{@"scope":@"openid"} callback:^(CMUserAccountResult resultCode, NSArray *messages) {
         NSLog(@"resultCode: %d", resultCode);
         
@@ -144,7 +144,8 @@
         CMLTCloudController *cc = [segue destinationViewController];
         
         // Pass any objects to the view controller here, like...
-        cc.user = _user.username;
+        NSLog(@"username %@", _user.name);
+        cc.user = _user;
     }
 }
 
