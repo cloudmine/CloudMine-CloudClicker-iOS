@@ -15,20 +15,9 @@
 
 @implementation CMLTCloudController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-    self.navigationController.navigationBar.hidden = YES;
 
     
     CMStore *store = [CMStore defaultStore];
@@ -66,23 +55,38 @@
 }
 
 
--(void) viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    
-    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-    self.navigationController.navigationBar.hidden = NO;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    if (_user.name.length == 0) {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Pick a Nickname" message:@"Enter you nickname" delegate:self cancelButtonTitle:@"Done" otherButtonTitles: nil];
-        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-        [alert show];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    
+    if (!_user) {
+        CMLTLoginViewController *login = [self.storyboard instantiateViewControllerWithIdentifier:@"CMLTLoginViewController"];
+        login.delegate = self;
+        
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:login];
+        [self presentViewController:nav animated:NO completion:nil];
+        return;
     }
+}
+
+- (void)controller:(CMLTLoginViewController *)controller didLoginWithUser:(CMLTUser *)user;
+{
+    self.user = user;
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+        if (_user.name.length == 0) {
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Pick a Nickname" message:@"Enter you nickname" delegate:self cancelButtonTitle:@"Done" otherButtonTitles: nil];
+            alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+            [alert show];
+        }
+        
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -124,7 +128,11 @@
 
         if (CMUserAccountLogoutSucceeded) {
                     // success! the user is logged out
-            [self performSegueWithIdentifier:@"logoutSegue" sender:self];
+            CMLTLoginViewController *login = [self.storyboard instantiateViewControllerWithIdentifier:@"CMLTLoginViewController"];
+            login.delegate = self;
+            
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:login];
+            [self presentViewController:nav animated:YES completion:nil];
         }
 
     }];
@@ -146,7 +154,9 @@
     }];
     [_user save:^(CMUserAccountResult resultCode, NSArray *messages){
         NSLog(@"Saved User %@", messages);
-        [self performSegueWithIdentifier:@"highScoreSegue" sender:self];
+        
+        CMLTHighScoreViewController *highScore = [self.storyboard instantiateViewControllerWithIdentifier:@"CMLTHighScoreViewController"];
+        [self.navigationController pushViewController:highScore animated:YES];
     }];
 }
 

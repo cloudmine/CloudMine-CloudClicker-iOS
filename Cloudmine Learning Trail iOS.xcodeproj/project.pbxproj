@@ -16,7 +16,7 @@
 		EF49427519785BFD003EC85B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF49427419785BFD003EC85B /* main.m */; };
 		EF49427919785BFD003EC85B /* CMLTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF49427819785BFD003EC85B /* CMLTAppDelegate.m */; };
 		EF49427C19785BFD003EC85B /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF49427A19785BFD003EC85B /* Main_iPhone.storyboard */; };
-		EF49428219785BFD003EC85B /* CMLTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF49428119785BFD003EC85B /* CMLTViewController.m */; };
+		EF49428219785BFD003EC85B /* CMLTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF49428119785BFD003EC85B /* CMLTLoginViewController.m */; };
 		EF49428419785BFD003EC85B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF49428319785BFD003EC85B /* Images.xcassets */; };
 		EF49428B19785BFD003EC85B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF49428A19785BFD003EC85B /* XCTest.framework */; };
 		EF49428C19785BFD003EC85B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF49426819785BFD003EC85B /* Foundation.framework */; };
@@ -60,8 +60,8 @@
 		EF49427719785BFD003EC85B /* CMLTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMLTAppDelegate.h; sourceTree = "<group>"; };
 		EF49427819785BFD003EC85B /* CMLTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMLTAppDelegate.m; sourceTree = "<group>"; };
 		EF49427B19785BFD003EC85B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		EF49428019785BFD003EC85B /* CMLTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMLTViewController.h; sourceTree = "<group>"; };
-		EF49428119785BFD003EC85B /* CMLTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMLTViewController.m; sourceTree = "<group>"; };
+		EF49428019785BFD003EC85B /* CMLTLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMLTLoginViewController.h; sourceTree = "<group>"; };
+		EF49428119785BFD003EC85B /* CMLTLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMLTLoginViewController.m; sourceTree = "<group>"; };
 		EF49428319785BFD003EC85B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EF49428919785BFD003EC85B /* Cloudmine Learning Trail iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cloudmine Learning Trail iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF49428A19785BFD003EC85B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -161,8 +161,8 @@
 				EF49427A19785BFD003EC85B /* Main_iPhone.storyboard */,
 				EF49427719785BFD003EC85B /* CMLTAppDelegate.h */,
 				EF49427819785BFD003EC85B /* CMLTAppDelegate.m */,
-				EF49428019785BFD003EC85B /* CMLTViewController.h */,
-				EF49428119785BFD003EC85B /* CMLTViewController.m */,
+				EF49428019785BFD003EC85B /* CMLTLoginViewController.h */,
+				EF49428119785BFD003EC85B /* CMLTLoginViewController.m */,
 				EF81F839197978BA000FA556 /* CMLTSignUpViewController.h */,
 				EF81F83A197978BA000FA556 /* CMLTSignUpViewController.m */,
 				EF81F83C197991F4000FA556 /* CMLTCloudController.h */,
@@ -353,7 +353,7 @@
 				EF81F83B197978BA000FA556 /* CMLTSignUpViewController.m in Sources */,
 				EF7939AB198936A7001D48D7 /* CMLTCloud.m in Sources */,
 				EF5B067D1982D46600D94F89 /* CMLTResetViewController.m in Sources */,
-				EF49428219785BFD003EC85B /* CMLTViewController.m in Sources */,
+				EF49428219785BFD003EC85B /* CMLTLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

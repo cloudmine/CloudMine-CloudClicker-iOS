@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 CloudMine. All rights reserved.
 //
 
-#import "CMLTViewController.h"
+#import "CMLTLoginViewController.h"
 #import "CloudMine.h"
 #import "CMLTCloudController.h"
 
-@interface CMLTViewController ()
+@interface CMLTLoginViewController ()
 
 @end
 
-@implementation CMLTViewController
+@implementation CMLTLoginViewController
 
 -(void) viewWillAppear:(BOOL)animated
 {
@@ -77,7 +77,7 @@
             case CMUserAccountLoginSucceeded:
                 // success! the user now has a session token
                 [self initializePush];
-                [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+                [self finishLogin];
                 break;
             case CMUserAccountLoginFailedIncorrectCredentials:
                 // the users credentials were invalid
@@ -97,13 +97,17 @@
     _user = [[CMLTUser alloc] init];
 
     [_user loginWithSocialNetwork:CMSocialNetworkFacebook viewController:self params:nil callback:^(CMUserAccountResult resultCode, NSArray *messages) {
+        
+        if (resultCode == CMUserAccountSocialLoginErrorOccurred) {
+            return;
+        }
+        
         NSLog(@"user.token: %@", _user.token);
 
         if (resultCode == CMUserAccountLoginSucceeded) {
             //Logged in!
             [self initializePush];
-            [self dismissViewControllerAnimated:YES completion:nil];
-            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+            [self finishLogin];
         } else {
             //Look up and deal with error
             NSLog(@"Message? %@", messages);
@@ -122,8 +126,7 @@
         if (resultCode == CMUserAccountLoginSucceeded) {
             //Logged in!
             [self initializePush];
-            [self dismissViewControllerAnimated:YES completion:nil];
-            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+            [self finishLogin];
         } else {
             //Look up and deal with error
             NSLog(@"Message? %@", messages);
@@ -133,23 +136,14 @@
     }];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)finishLogin;
 {
-    // Make sure your segue name in storyboard is the same as this line
-    if ([[segue identifier] isEqualToString:@"loginSegue"])
-    {
-        // Get reference to the destination view controller
-        CMLTCloudController *cc = [segue destinationViewController];
-        
-        // Pass any objects to the view controller here, like...
-        NSLog(@"username %@", _user.name);
-        cc.user = _user;
+    [CMStore defaultStore].user = _user;
+    
+    if ([self.delegate respondsToSelector:@selector(controller:didLoginWithUser:)]) {
+        [self.delegate controller:self didLoginWithUser:_user];
     }
 }
 
-- (IBAction)unwindToThisViewController:(UIStoryboardSegue *)unwindSegue
-{
-    
-}
 
 @end

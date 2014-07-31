@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "CMLTCloud.h"
 #import "CMLTUser.h"
+#import "CMLTLoginViewController.h"
 
-@interface CMLTCloudController : UIViewController <UIAlertViewDelegate>
+@interface CMLTCloudController : UIViewController <UIAlertViewDelegate, CMLTLoginDelegate>
+
 - (IBAction)didPressBlueCloud:(id)sender;
 - (IBAction)didPressRedCloud:(id)sender;
 - (IBAction)didPressLogout:(id)sender;
 - (IBAction)didPressHighScore:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UILabel *blueCloudLabel;
 @property (weak, nonatomic) IBOutlet UILabel *redCloudLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalCloudLabel;
