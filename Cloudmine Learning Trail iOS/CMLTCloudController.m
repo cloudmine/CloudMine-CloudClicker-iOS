@@ -29,40 +29,8 @@
     [super viewWillAppear:animated];
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     self.navigationController.navigationBar.hidden = YES;
-}
 
--(void) viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-    self.navigationController.navigationBar.hidden = NO;
-}
-
--(void) viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-
-    NSLog(@"Username %@ email %@", _user.username, _user.class);
-    _user.red = _redCloud.clicks;
-    _user.blue = _blueCloud.clicks;
-    _user.clicks = _redCloud.clicks + _blueCloud.clicks;
     
-    [_blueCloud save:^(CMObjectUploadResponse *response) {
-        NSLog(@"Saved, %@", response);
-    }];
-    [_redCloud save:^(CMObjectUploadResponse *response) {
-        NSLog(@"Saved, %@", response);
-    }];
-    [_user save:^(CMUserAccountResult resultCode, NSArray *messsages){
-        NSLog(@"Saved User %@", messsages);
-    }];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    NSLog(@"username %@", _user.name);
-
     CMStore *store = [CMStore defaultStore];
     [store allObjectsOfClass:[CMLTCloud class]
            additionalOptions:nil
@@ -86,25 +54,35 @@
                             _redCloud.cmid = @"redcloud";
                             _blueCloud.cmid = @"bluecloud";
                         }
+                        _blueCloud.clicks = _user.blue;
+                        _redCloud.clicks = _user.red;
+                        NSLog(@"blue: %d red: %d userblue %d userred %d", _blueCloud.clicks, _redCloud.clicks, _user.blue,  _user.red);
+                        
+                        [_redCloudLabel setText:[NSString stringWithFormat:@"Clicks: %d", _user.red]];
+                        [_blueCloudLabel setText:[NSString stringWithFormat:@"Clicks: %d", _user.blue]];
+                        [_totalCloudLabel setText:[NSString stringWithFormat:@"Total Clicks: %d", _user.clicks]];
                     }];
-                    
-    // Do any additional setup after loading the view.
     
-    _blueCloud.clicks = _user.blue;
-    _redCloud.clicks = _user.red;
-    
-    NSLog(@"blueCloud clicks: %d, redCloud clicks: %d", _blueCloud.clicks, _redCloud.clicks);
+}
 
-    [_redCloudLabel setText:[NSString stringWithFormat:@"Clicks: %d", _user.red]];
-    [_blueCloudLabel setText:[NSString stringWithFormat:@"Clicks: %d", _user.blue]];
-    [_totalCloudLabel setText:[NSString stringWithFormat:@"Total Clicks: %d", _user.clicks]];
+
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
     
-    if (_user.name.length ==0) {
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    self.navigationController.navigationBar.hidden = NO;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    if (_user.name.length == 0) {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Pick a Nickname" message:@"Enter you nickname" delegate:self cancelButtonTitle:@"Done" otherButtonTitles: nil];
         alert.alertViewStyle = UIAlertViewStylePlainTextInput;
         [alert show];
     }
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -123,7 +101,7 @@
 }
 */
 - (IBAction)didPressBlueCloud:(id)sender {
-    NSLog(@"blueCloud clicks: %d, redCloud clicks: %d", _blueCloud.clicks, _redCloud.clicks);
+    NSLog(@"in bluecloud: blue: %d red: %d userblue %d userred %d", _blueCloud.clicks, _redCloud.clicks, _user.blue,  _user.red);
     _blueCloud.clicks++;
     
     [_blueCloudLabel setText:[NSString stringWithFormat:@"Clicks: %d", _blueCloud.clicks]];
@@ -132,7 +110,7 @@
 }
 
 - (IBAction)didPressRedCloud:(id)sender {
-    NSLog(@"blueCloud clicks: %d, redCloud clicks: %d", _blueCloud.clicks, _redCloud.clicks);
+    NSLog(@"In redcloud: blue: %d red: %d userblue %d userred %d", _blueCloud.clicks, _redCloud.clicks, _user.blue,  _user.red);
 
     _redCloud.clicks++;
     
@@ -142,12 +120,33 @@
 
 - (IBAction)didPressLogout:(id)sender {
     [[CMStore defaultStore].user logoutWithCallback:^(CMUserAccountResult resultCode, NSArray *messages) {
+        NSLog(@"result code, %d messages %@", resultCode, messages);
 
         if (CMUserAccountLogoutSucceeded) {
                     // success! the user is logged out
             [self performSegueWithIdentifier:@"logoutSegue" sender:self];
         }
 
+    }];
+}
+
+- (IBAction)didPressHighScore:(id)sender {
+        NSLog(@"Username %@ email %@", _user.username, _user.class);
+    _user.red = _redCloud.clicks;
+    _user.blue = _blueCloud.clicks;
+    _user.clicks = _redCloud.clicks + _blueCloud.clicks;
+    NSLog(@"In DPHS: blue: %d red: %d userblue %d userred %d", _blueCloud.clicks, _redCloud.clicks, _user.blue,  _user.red);
+
+    
+    [_blueCloud save:^(CMObjectUploadResponse *response) {
+        NSLog(@"Saved, %@", response);
+    }];
+    [_redCloud save:^(CMObjectUploadResponse *response) {
+        NSLog(@"Saved, %@", response);
+    }];
+    [_user save:^(CMUserAccountResult resultCode, NSArray *messages){
+        NSLog(@"Saved User %@", messages);
+        [self performSegueWithIdentifier:@"highScoreSegue" sender:self];
     }];
 }
 

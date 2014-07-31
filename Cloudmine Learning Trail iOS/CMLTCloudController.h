@@ -14,6 +14,7 @@
 - (IBAction)didPressBlueCloud:(id)sender;
 - (IBAction)didPressRedCloud:(id)sender;
 - (IBAction)didPressLogout:(id)sender;
+- (IBAction)didPressHighScore:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *blueCloudLabel;
 @property (weak, nonatomic) IBOutlet UILabel *redCloudLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalCloudLabel;

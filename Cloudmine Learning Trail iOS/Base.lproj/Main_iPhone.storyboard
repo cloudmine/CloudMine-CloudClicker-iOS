@@ -339,7 +339,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="DWK-lf-Oyf" kind="push" identifier="highScoreSegue" id="5pZ-u9-CTc"/>
+                                    <action selector="didPressHighScore:" destination="Glh-I8-jCl" eventType="touchUpInside" id="bhf-x2-Lh6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKf-29-X6G">
@@ -362,6 +362,7 @@
                         <outlet property="redCloudLabel" destination="meF-20-t7b" id="c5W-PQ-ft0"/>
                         <outlet property="totalCloudLabel" destination="7fk-8D-Oii" id="hMY-Sk-4ko"/>
                         <segue destination="EC5-Mn-xbF" kind="unwind" identifier="logoutSegue" unwindAction="unwindToThisViewController:" id="D8r-Lp-oHw"/>
+                        <segue destination="DWK-lf-Oyf" kind="push" identifier="highScoreSegue" id="jqI-OG-3d7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uss-9q-tr6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -433,7 +434,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MY5-EX-QuW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1640" y="59"/>
+            <point key="canvasLocation" x="1702" y="59"/>
         </scene>
         <!--Reset View Controller-->
         <scene sceneID="DGD-yU-YYG">
