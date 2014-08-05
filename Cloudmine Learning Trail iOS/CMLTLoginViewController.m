@@ -16,13 +16,13 @@
 
 @implementation CMLTLoginViewController
 
--(void) viewWillAppear:(BOOL)animated
+- (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
--(void) viewWillDisappear:(BOOL)animated
+- (void) viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
@@ -35,12 +35,6 @@
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
-}
- 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -67,28 +61,50 @@
 
 - (IBAction)login:(id)sender {
     _user = [[CMLTUser alloc] initWithEmail:[_EmailTextField text] andPassword:[_PasswordTextField text]];
-    UIAlertView * passwordAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Invalid Credentials" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-    UIAlertView * existenceAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"An account with those credentials does not exist" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-    UIAlertView * defaultAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"An Error occured in the login process." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+    UIAlertView * passwordAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed"
+                                                             message:@"Invalid Credentials"
+                                                            delegate:self
+                                                   cancelButtonTitle:@"Okay"
+                                                   otherButtonTitles:nil];
+    
+    UIAlertView * existenceAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed"
+                                                              message:@"An account with those credentials does not exist"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Okay"
+                                                    otherButtonTitles:nil];
+    
+    UIAlertView * defaultAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed"
+                                                            message:@"An Error occured in the login process."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Okay"
+                                                  otherButtonTitles: nil];
 
     // You can use "anotherUser" here in the same way!
     [_user loginWithCallback:^(CMUserAccountResult resultCode, NSArray *messages) {
         switch(resultCode) {
             case CMUserAccountLoginSucceeded:
+            {
                 // success! the user now has a session token
                 [self initializePush];
                 [self finishLogin];
                 break;
+            }
             case CMUserAccountLoginFailedIncorrectCredentials:
+            {
                 // the users credentials were invalid
                 [passwordAlert show];
                 break;
+            }
             case CMUserAccountOperationFailedUnknownAccount:
+            {
                 [existenceAlert show];
                 // this account doesn't exist
                 break;
+            }
             default:
+            {
                 [defaultAlert show];
+            }
         }
     }];
 }

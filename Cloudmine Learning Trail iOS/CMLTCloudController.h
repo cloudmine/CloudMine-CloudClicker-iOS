@@ -27,6 +27,7 @@
 
 @property (strong, nonatomic) CMLTUser *user;
 @property (strong, nonatomic) NSString *userString;
+
 @property int blueCount;
 @property int redCount;
 @property int totalCount;

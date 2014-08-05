@@ -35,12 +35,6 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 /*
 #pragma mark - Navigation
 
@@ -69,7 +63,11 @@
     else
     {
         if (![_passwordField.text isEqualToString:_confirmPasswordField.text] ) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Passwords do not match" message:@"Your password fields do not match" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Passwords do not match"
+                                                            message:@"Your password fields do not match"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Cancel"
+                                                  otherButtonTitles: nil];
             [alert show];
         }
         [textField resignFirstResponder];
@@ -94,15 +92,20 @@
     [user createAccountWithCallback:^(CMUserAccountResult resultCode, NSArray *messages) {
         switch(resultCode) {
             case CMUserAccountCreateSucceeded:
+            {
                 // did it!
                 NSLog(@"Account Created");
                 [self performSegueWithIdentifier:@"signupSegue" sender:self];
                 break;
-            
+            }
             case CMUserAccountCreateFailedDuplicateAccount:
             {
                 // account with this email already exists
-                UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Account Exists" message:@"An account with this email already exists" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+                UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Account Exists"
+                                                                 message:@"An account with this email already exists"
+                                                                delegate:self
+                                                       cancelButtonTitle:@"Okay"
+                                                       otherButtonTitles: nil];
                 [alert show];
                 break;
             }
@@ -110,7 +113,11 @@
             default:
             {
                 NSLog(@"Invalid Request");
-                UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Invalid Request" message:@"There was a problem creating your account with these credentials" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+                UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Invalid Request"
+                                                                 message:@"There was a problem creating your account with these credentials"
+                                                                delegate:self
+                                                       cancelButtonTitle:@"Okay"
+                                                       otherButtonTitles: nil];
                 [alert show];
                 // forgot the email/username or password
                 break;

@@ -9,13 +9,9 @@
 #import "CMLTCloudController.h"
 #import "CMLTHighScoreViewController.h"
 
-@interface CMLTCloudController ()
-
-@end
-
 @implementation CMLTCloudController
 
--(void) viewWillAppear:(BOOL)animated
+- (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
 
@@ -80,19 +76,17 @@
     [self dismissViewControllerAnimated:YES completion:^{
         
         if (_user.name.length == 0) {
-            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Pick a Nickname" message:@"Enter you nickname" delegate:self cancelButtonTitle:@"Done" otherButtonTitles: nil];
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Pick a Nickname"
+                                                             message:@"Enter you nickname"
+                                                            delegate:self
+                                                   cancelButtonTitle:@"Done"
+                                                   otherButtonTitles: nil];
             alert.alertViewStyle = UIAlertViewStylePlainTextInput;
             [alert show];
         }
         
     }];
     
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

@@ -30,12 +30,6 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 /*
 #pragma mark - Navigation
 
@@ -58,14 +52,22 @@
         switch(resultCode) {
             case CMUserAccountPasswordResetEmailSent:
             {
-                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Recovery Email Sent" message:@"An email has been sent to the specified address" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Recovery Email Sent"
+                                                                message:@"An email has been sent to the specified address"
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Okay"
+                                                      otherButtonTitles: nil];
                 [alert show];
                 break;
 
             }
             default:
             {
-                UIAlertView *failedAlert = [[UIAlertView alloc]initWithTitle:@"Reset Failed" message:@"An error occured. Please check your email address and try again." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+                UIAlertView *failedAlert = [[UIAlertView alloc] initWithTitle:@"Reset Failed"
+                                                                      message:@"An error occured. Please check your email address and try again."
+                                                                     delegate:self
+                                                            cancelButtonTitle:@"Okay"
+                                                            otherButtonTitles: nil];
                 [failedAlert show];
                 break;
             }

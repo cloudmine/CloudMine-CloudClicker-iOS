@@ -27,6 +27,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
     [CMLTUser allUsersWithCallback:^(NSArray *users, NSDictionary *errors) {
                             NSLog(@"Users: %@", users);
                             NSArray * objectArray = [NSArray arrayWithArray:users];
@@ -64,14 +66,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*
