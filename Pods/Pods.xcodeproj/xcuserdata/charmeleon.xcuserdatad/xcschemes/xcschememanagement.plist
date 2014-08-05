@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-Cloudmine Learning Trail iOS-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Cloudmine Learning Trail iOS-CloudMine.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Cloudmine Learning Trail iOS-MAObjCRuntime.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Cloudmine Learning Trail iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>85932414ACDA490BB2DE3C07</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C20F3DD412864D92A09DDC12</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C8EC0911E2A8431897DF4994</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D05EE9E9FDB746DA82F5D6D7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

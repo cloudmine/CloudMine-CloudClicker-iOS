@@ -1,0 +1,1 @@
+PODS_CLOUDMINE_LEARNING_TRAIL_IOS_CLOUDMINE_OTHER_LDFLAGS = -ObjC -lz -framework CFNetwork -framework CoreFoundation -framework CoreGraphics -framework CoreLocation -framework Foundation -framework MobileCoreServices -framework SystemConfiguration -framework UIKit

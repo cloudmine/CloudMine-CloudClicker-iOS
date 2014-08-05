@@ -8,14 +8,17 @@
 
 #import "CMLTAppDelegate.h"
 
-@implementation CMLTAppDelegate
+@implementation CMLTAppDelegate 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    CMAPICredentials *credentials = [CMAPICredentials sharedInstance];
+    credentials.appIdentifier = @"33a972520cb447bda768b5d93ceb266f";
+    credentials.appSecret = @"abd9cd9a6c1c4d529bff4b3fa1ccd51c";
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

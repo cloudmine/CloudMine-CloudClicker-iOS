@@ -1,0 +1,5 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/CloudMine" "${PODS_ROOT}/Headers/MAObjCRuntime"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers" -isystem "${PODS_ROOT}/Headers/AFNetworking" -isystem "${PODS_ROOT}/Headers/CloudMine" -isystem "${PODS_ROOT}/Headers/MAObjCRuntime"
+OTHER_LDFLAGS = -ObjC -lz -framework CFNetwork -framework CoreFoundation -framework CoreGraphics -framework CoreLocation -framework Foundation -framework MobileCoreServices -framework Security -framework SystemConfiguration -framework UIKit
+PODS_ROOT = ${SRCROOT}/Pods

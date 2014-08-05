@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CloudMine.h"
 
-@interface CMLTAppDelegate : UIResponder <UIApplicationDelegate>
+@interface CMLTAppDelegate : CMAppDelegateBase <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

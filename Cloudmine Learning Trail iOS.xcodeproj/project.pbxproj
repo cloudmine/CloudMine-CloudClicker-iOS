@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0345E05E3C24C31A7645D03 /* libPods-Cloudmine Learning Trail iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F42AEBE8641A43A480BF1008 /* libPods-Cloudmine Learning Trail iOS.a */; };
+		EF130FAA1982EB58006A79CF /* REMOVE BEFORE RELEASE.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EF130FA91982EB58006A79CF /* REMOVE BEFORE RELEASE.rtf */; };
 		EF49426919785BFD003EC85B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF49426819785BFD003EC85B /* Foundation.framework */; };
 		EF49426B19785BFD003EC85B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF49426A19785BFD003EC85B /* CoreGraphics.framework */; };
 		EF49426D19785BFD003EC85B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF49426C19785BFD003EC85B /* UIKit.framework */; };
@@ -14,13 +16,24 @@
 		EF49427519785BFD003EC85B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF49427419785BFD003EC85B /* main.m */; };
 		EF49427919785BFD003EC85B /* CMLTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF49427819785BFD003EC85B /* CMLTAppDelegate.m */; };
 		EF49427C19785BFD003EC85B /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF49427A19785BFD003EC85B /* Main_iPhone.storyboard */; };
-		EF49428219785BFD003EC85B /* CMLTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF49428119785BFD003EC85B /* CMLTViewController.m */; };
+		EF49428219785BFD003EC85B /* CMLTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF49428119785BFD003EC85B /* CMLTLoginViewController.m */; };
 		EF49428419785BFD003EC85B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF49428319785BFD003EC85B /* Images.xcassets */; };
 		EF49428B19785BFD003EC85B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF49428A19785BFD003EC85B /* XCTest.framework */; };
 		EF49428C19785BFD003EC85B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF49426819785BFD003EC85B /* Foundation.framework */; };
 		EF49428D19785BFD003EC85B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF49426C19785BFD003EC85B /* UIKit.framework */; };
 		EF49429519785BFD003EC85B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EF49429319785BFD003EC85B /* InfoPlist.strings */; };
 		EF49429719785BFD003EC85B /* Cloudmine_Learning_Trail_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF49429619785BFD003EC85B /* Cloudmine_Learning_Trail_iOSTests.m */; };
+		EF5B067D1982D46600D94F89 /* CMLTResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5B067C1982D46600D94F89 /* CMLTResetViewController.m */; };
+		EF6AC815197D87A40092AF03 /* CMLTHighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6AC814197D87A40092AF03 /* CMLTHighScoreViewController.m */; };
+		EF7939A8198934A8001D48D7 /* CMLTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7939A7198934A8001D48D7 /* CMLTUser.m */; };
+		EF7939AB198936A7001D48D7 /* CMLTCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7939AA198936A7001D48D7 /* CMLTCloud.m */; };
+		EF81F83B197978BA000FA556 /* CMLTSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF81F83A197978BA000FA556 /* CMLTSignUpViewController.m */; };
+		EF81F83E197991F4000FA556 /* CMLTCloudController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF81F83D197991F4000FA556 /* CMLTCloudController.m */; };
+		EFDB52FD19799E2400AB0842 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDB52FC19799E2400AB0842 /* libz.dylib */; };
+		EFDB52FF19799E2D00AB0842 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDB52FE19799E2D00AB0842 /* MobileCoreServices.framework */; };
+		EFDB530119799E3900AB0842 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDB530019799E3900AB0842 /* SystemConfiguration.framework */; };
+		EFDB530319799E4300AB0842 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDB530219799E4300AB0842 /* CoreLocation.framework */; };
+		EFDB530519799E4B00AB0842 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDB530419799E4B00AB0842 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D82C5FFBA1C46458A9D3B22 /* Pods-Cloudmine Learning Trail iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cloudmine Learning Trail iOS.xcconfig"; path = "Pods/Pods-Cloudmine Learning Trail iOS.xcconfig"; sourceTree = "<group>"; };
+		EF130FA91982EB58006A79CF /* REMOVE BEFORE RELEASE.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "REMOVE BEFORE RELEASE.rtf"; sourceTree = "<group>"; };
 		EF49426519785BFD003EC85B /* Cloudmine Learning Trail iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cloudmine Learning Trail iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF49426819785BFD003EC85B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EF49426A19785BFD003EC85B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,14 +60,32 @@
 		EF49427719785BFD003EC85B /* CMLTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMLTAppDelegate.h; sourceTree = "<group>"; };
 		EF49427819785BFD003EC85B /* CMLTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMLTAppDelegate.m; sourceTree = "<group>"; };
 		EF49427B19785BFD003EC85B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		EF49428019785BFD003EC85B /* CMLTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMLTViewController.h; sourceTree = "<group>"; };
-		EF49428119785BFD003EC85B /* CMLTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMLTViewController.m; sourceTree = "<group>"; };
+		EF49428019785BFD003EC85B /* CMLTLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMLTLoginViewController.h; sourceTree = "<group>"; };
+		EF49428119785BFD003EC85B /* CMLTLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMLTLoginViewController.m; sourceTree = "<group>"; };
 		EF49428319785BFD003EC85B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EF49428919785BFD003EC85B /* Cloudmine Learning Trail iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cloudmine Learning Trail iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF49428A19785BFD003EC85B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EF49429219785BFD003EC85B /* Cloudmine Learning Trail iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Cloudmine Learning Trail iOSTests-Info.plist"; sourceTree = "<group>"; };
 		EF49429419785BFD003EC85B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EF49429619785BFD003EC85B /* Cloudmine_Learning_Trail_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cloudmine_Learning_Trail_iOSTests.m; sourceTree = "<group>"; };
+		EF5B067B1982D46600D94F89 /* CMLTResetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMLTResetViewController.h; sourceTree = "<group>"; };
+		EF5B067C1982D46600D94F89 /* CMLTResetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMLTResetViewController.m; sourceTree = "<group>"; };
+		EF6AC813197D87A40092AF03 /* CMLTHighScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMLTHighScoreViewController.h; sourceTree = "<group>"; };
+		EF6AC814197D87A40092AF03 /* CMLTHighScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMLTHighScoreViewController.m; sourceTree = "<group>"; };
+		EF7939A6198934A8001D48D7 /* CMLTUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMLTUser.h; sourceTree = "<group>"; };
+		EF7939A7198934A8001D48D7 /* CMLTUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMLTUser.m; sourceTree = "<group>"; };
+		EF7939A9198936A7001D48D7 /* CMLTCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMLTCloud.h; sourceTree = "<group>"; };
+		EF7939AA198936A7001D48D7 /* CMLTCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMLTCloud.m; sourceTree = "<group>"; };
+		EF81F839197978BA000FA556 /* CMLTSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMLTSignUpViewController.h; sourceTree = "<group>"; };
+		EF81F83A197978BA000FA556 /* CMLTSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMLTSignUpViewController.m; sourceTree = "<group>"; };
+		EF81F83C197991F4000FA556 /* CMLTCloudController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMLTCloudController.h; sourceTree = "<group>"; };
+		EF81F83D197991F4000FA556 /* CMLTCloudController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMLTCloudController.m; sourceTree = "<group>"; };
+		EFDB52FC19799E2400AB0842 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		EFDB52FE19799E2D00AB0842 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		EFDB530019799E3900AB0842 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EFDB530219799E4300AB0842 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EFDB530419799E4B00AB0842 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F42AEBE8641A43A480BF1008 /* libPods-Cloudmine Learning Trail iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cloudmine Learning Trail iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +93,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFDB530519799E4B00AB0842 /* CFNetwork.framework in Frameworks */,
+				EFDB530319799E4300AB0842 /* CoreLocation.framework in Frameworks */,
+				EFDB530119799E3900AB0842 /* SystemConfiguration.framework in Frameworks */,
+				EFDB52FF19799E2D00AB0842 /* MobileCoreServices.framework in Frameworks */,
+				EFDB52FD19799E2400AB0842 /* libz.dylib in Frameworks */,
 				EF49426B19785BFD003EC85B /* CoreGraphics.framework in Frameworks */,
 				EF49426D19785BFD003EC85B /* UIKit.framework in Frameworks */,
 				EF49426919785BFD003EC85B /* Foundation.framework in Frameworks */,
+				C0345E05E3C24C31A7645D03 /* libPods-Cloudmine Learning Trail iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +125,7 @@
 				EF49429019785BFD003EC85B /* Cloudmine Learning Trail iOSTests */,
 				EF49426719785BFD003EC85B /* Frameworks */,
 				EF49426619785BFD003EC85B /* Products */,
+				8D82C5FFBA1C46458A9D3B22 /* Pods-Cloudmine Learning Trail iOS.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +141,16 @@
 		EF49426719785BFD003EC85B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EFDB530419799E4B00AB0842 /* CFNetwork.framework */,
+				EFDB530219799E4300AB0842 /* CoreLocation.framework */,
+				EFDB530019799E3900AB0842 /* SystemConfiguration.framework */,
+				EFDB52FE19799E2D00AB0842 /* MobileCoreServices.framework */,
+				EFDB52FC19799E2400AB0842 /* libz.dylib */,
 				EF49426819785BFD003EC85B /* Foundation.framework */,
 				EF49426A19785BFD003EC85B /* CoreGraphics.framework */,
 				EF49426C19785BFD003EC85B /* UIKit.framework */,
 				EF49428A19785BFD003EC85B /* XCTest.framework */,
+				F42AEBE8641A43A480BF1008 /* libPods-Cloudmine Learning Trail iOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,11 +158,23 @@
 		EF49426E19785BFD003EC85B /* Cloudmine Learning Trail iOS */ = {
 			isa = PBXGroup;
 			children = (
+				EF49427A19785BFD003EC85B /* Main_iPhone.storyboard */,
 				EF49427719785BFD003EC85B /* CMLTAppDelegate.h */,
 				EF49427819785BFD003EC85B /* CMLTAppDelegate.m */,
-				EF49427A19785BFD003EC85B /* Main_iPhone.storyboard */,
-				EF49428019785BFD003EC85B /* CMLTViewController.h */,
-				EF49428119785BFD003EC85B /* CMLTViewController.m */,
+				EF49428019785BFD003EC85B /* CMLTLoginViewController.h */,
+				EF49428119785BFD003EC85B /* CMLTLoginViewController.m */,
+				EF81F839197978BA000FA556 /* CMLTSignUpViewController.h */,
+				EF81F83A197978BA000FA556 /* CMLTSignUpViewController.m */,
+				EF81F83C197991F4000FA556 /* CMLTCloudController.h */,
+				EF81F83D197991F4000FA556 /* CMLTCloudController.m */,
+				EF6AC813197D87A40092AF03 /* CMLTHighScoreViewController.h */,
+				EF6AC814197D87A40092AF03 /* CMLTHighScoreViewController.m */,
+				EF5B067B1982D46600D94F89 /* CMLTResetViewController.h */,
+				EF5B067C1982D46600D94F89 /* CMLTResetViewController.m */,
+				EF7939A9198936A7001D48D7 /* CMLTCloud.h */,
+				EF7939AA198936A7001D48D7 /* CMLTCloud.m */,
+				EF7939A6198934A8001D48D7 /* CMLTUser.h */,
+				EF7939A7198934A8001D48D7 /* CMLTUser.m */,
 				EF49428319785BFD003EC85B /* Images.xcassets */,
 				EF49426F19785BFD003EC85B /* Supporting Files */,
 			);
@@ -126,6 +184,7 @@
 		EF49426F19785BFD003EC85B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EF130FA91982EB58006A79CF /* REMOVE BEFORE RELEASE.rtf */,
 				EF49427019785BFD003EC85B /* Cloudmine Learning Trail iOS-Info.plist */,
 				EF49427119785BFD003EC85B /* InfoPlist.strings */,
 				EF49427419785BFD003EC85B /* main.m */,
@@ -159,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF49429A19785BFD003EC85B /* Build configuration list for PBXNativeTarget "Cloudmine Learning Trail iOS" */;
 			buildPhases = (
+				6088B8B2367B4F44AA9114C1 /* Check Pods Manifest.lock */,
 				EF49426119785BFD003EC85B /* Sources */,
 				EF49426219785BFD003EC85B /* Frameworks */,
 				EF49426319785BFD003EC85B /* Resources */,
+				D136A753384345909D79ACCB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF49428419785BFD003EC85B /* Images.xcassets in Resources */,
+				EF130FAA1982EB58006A79CF /* REMOVE BEFORE RELEASE.rtf in Resources */,
 				EF49427C19785BFD003EC85B /* Main_iPhone.storyboard in Resources */,
 				EF49427319785BFD003EC85B /* InfoPlist.strings in Resources */,
 			);
@@ -245,14 +307,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6088B8B2367B4F44AA9114C1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D136A753384345909D79ACCB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Cloudmine Learning Trail iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EF49426119785BFD003EC85B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EF49427919785BFD003EC85B /* CMLTAppDelegate.m in Sources */,
+				EF6AC815197D87A40092AF03 /* CMLTHighScoreViewController.m in Sources */,
+				EF7939A8198934A8001D48D7 /* CMLTUser.m in Sources */,
 				EF49427519785BFD003EC85B /* main.m in Sources */,
-				EF49428219785BFD003EC85B /* CMLTViewController.m in Sources */,
+				EF81F83E197991F4000FA556 /* CMLTCloudController.m in Sources */,
+				EF81F83B197978BA000FA556 /* CMLTSignUpViewController.m in Sources */,
+				EF7939AB198936A7001D48D7 /* CMLTCloud.m in Sources */,
+				EF5B067D1982D46600D94F89 /* CMLTResetViewController.m in Sources */,
+				EF49428219785BFD003EC85B /* CMLTLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,26 +477,49 @@
 		};
 		EF49429B19785BFD003EC85B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D82C5FFBA1C46458A9D3B22 /* Pods-Cloudmine Learning Trail iOS.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Charles Burnett (4U77TFXKWN)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cloudmine Learning Trail iOS/Cloudmine Learning Trail iOS-Prefix.pch";
 				INFOPLIST_FILE = "Cloudmine Learning Trail iOS/Cloudmine Learning Trail iOS-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "F3EDB434-058B-467E-A2C8-E205081EFE7A";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		EF49429C19785BFD003EC85B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D82C5FFBA1C46458A9D3B22 /* Pods-Cloudmine Learning Trail iOS.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cloudmine Learning Trail iOS/Cloudmine Learning Trail iOS-Prefix.pch";
 				INFOPLIST_FILE = "Cloudmine Learning Trail iOS/Cloudmine Learning Trail iOS-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "F3EDB434-058B-467E-A2C8-E205081EFE7A";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -459,6 +583,7 @@
 				EF49429C19785BFD003EC85B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EF49429D19785BFD003EC85B /* Build configuration list for PBXNativeTarget "Cloudmine Learning Trail iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -467,6 +592,7 @@
 				EF49429F19785BFD003EC85B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
