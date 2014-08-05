@@ -18,7 +18,7 @@
 - (id)initWithCoder:(NSCoder *)aCoder {
     if ((self = [super initWithCoder:aCoder])) {
         _cmid = [aCoder decodeObjectForKey:@"cmid"];
-        _clicks = [aCoder decodeInt32ForKey:@"clicks"];
+        _clicks = [aCoder decodeIntegerForKey:@"clicks"];
     }
     return self;
 }

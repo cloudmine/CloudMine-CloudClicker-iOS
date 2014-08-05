@@ -21,9 +21,9 @@
 - (id)initWithCoder:(NSCoder *)aCoder {
     if ((self = [super initWithCoder:aCoder])) {
         _name = [aCoder decodeObjectForKey:@"name"];
-        _blue = [aCoder decodeInt32ForKey:@"blue"];
-        _red = [aCoder decodeInt32ForKey:@"red"];
-        _clicks = [aCoder decodeInt32ForKey:@"clicks"];
+        _blue = [aCoder decodeIntegerForKey:@"blue"];
+        _red = [aCoder decodeIntegerForKey:@"red"];
+        _clicks = [aCoder decodeIntegerForKey:@"clicks"];
     }
     return self;
 }
