@@ -37,9 +37,9 @@
                             NSString *highBlueUser;
                             NSString *highRedUser;
 
-                            int highscore = 0;
-                            int highredscore = 0;
-                            int highbluescore = 0;
+                            NSInteger highscore = 0;
+                            NSInteger highredscore = 0;
+                            NSInteger highbluescore = 0;
                             
                             for (CMLTUser *user in objectArray) {
                                 if (highscore< user.clicks) {

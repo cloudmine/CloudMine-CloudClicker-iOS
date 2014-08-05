@@ -11,8 +11,8 @@
 @interface CMLTUser : CMUser
 
 @property (strong, nonatomic) NSString * name;
-@property int clicks;
-@property int blue;
-@property int red;
+@property (assign) NSInteger clicks;
+@property (assign) NSInteger blue;
+@property (assign) NSInteger red;
 
 @end

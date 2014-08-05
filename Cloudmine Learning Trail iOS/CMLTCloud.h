@@ -11,6 +11,6 @@
 @interface CMLTCloud : CMObject
 
 @property NSString * cmid;
-@property int clicks;
+@property (assign) NSInteger clicks;
 
 @end

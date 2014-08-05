@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface CMLTSignUpViewController : UIViewController <UITextFieldDelegate, UIAlertViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordField;
+
 - (IBAction)didPressSignUp:(id)sender;
 
 @end

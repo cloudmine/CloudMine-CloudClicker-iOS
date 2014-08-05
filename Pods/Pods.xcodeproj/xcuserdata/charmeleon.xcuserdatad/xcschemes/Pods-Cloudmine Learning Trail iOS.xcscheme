@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "262C980283394C04A36B6436"
+               BlueprintIdentifier = "85932414ACDA490BB2DE3C07"
                BuildableName = "libPods-Cloudmine Learning Trail iOS.a"
                BlueprintName = "Pods-Cloudmine Learning Trail iOS"
                ReferencedContainer = "container:Pods.xcodeproj">
