@@ -118,8 +118,6 @@
             return;
         }
         
-        NSLog(@"user.token: %@", _user.token);
-
         if (resultCode == CMUserAccountLoginSucceeded) {
             //Logged in!
             [self initializePush];
@@ -137,7 +135,6 @@
 - (IBAction)googleLogin:(id)sender {
     _user = [[CMLTUser alloc] init];
     [_user loginWithSocialNetwork:@"google" viewController:self params:@{@"scope":@"openid"} callback:^(CMUserAccountResult resultCode, NSArray *messages) {
-        NSLog(@"resultCode: %d", resultCode);
         
         if (resultCode == CMUserAccountLoginSucceeded) {
             //Logged in!

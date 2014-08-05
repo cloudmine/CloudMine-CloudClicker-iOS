@@ -16,21 +16,11 @@
 
 @implementation CMLTHighScoreViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
     [CMLTUser allUsersWithCallback:^(NSArray *users, NSDictionary *errors) {
-                            NSLog(@"Users: %@", users);
                             NSArray * objectArray = [NSArray arrayWithArray:users];
                             
                             NSString *highUser;
@@ -55,10 +45,9 @@
                                     highBlueUser = user.name;
                                 }
                             }                            
-                            NSLog(@"red: %d, blue: %d total: %d",highredscore,highbluescore,highscore);
-                            [_RedScoreLabel setText:[NSString stringWithFormat:@"Red Cloud: %d - %@", highredscore, highRedUser]];
-                            [_blueScoreLabel setText:[NSString stringWithFormat:@"Blue Cloud: %d - %@", highbluescore, highBlueUser]];
-                            [_totalScoreLabel setText:[NSString stringWithFormat:@"Total Clicks: %d - %@", highscore, highUser]];
+                            [_RedScoreLabel setText:[NSString stringWithFormat:@"Red Cloud: %ld - %@", highredscore, highRedUser]];
+                            [_blueScoreLabel setText:[NSString stringWithFormat:@"Blue Cloud: %ld - %@", highbluescore, highBlueUser]];
+                            [_totalScoreLabel setText:[NSString stringWithFormat:@"Total Clicks: %ld - %@", highscore, highUser]];
                         }
      ];
 }

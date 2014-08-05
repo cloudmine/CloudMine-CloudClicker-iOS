@@ -15,15 +15,6 @@
 
 @implementation CMLTSignUpViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -112,7 +103,6 @@
                 
             default:
             {
-                NSLog(@"Invalid Request");
                 UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Invalid Request"
                                                                  message:@"There was a problem creating your account with these credentials"
                                                                 delegate:self
